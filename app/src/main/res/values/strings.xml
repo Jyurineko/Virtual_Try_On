@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Virtual_Try_On</string>
+    <string name="button_obj_shower">Show Obj</string>
+    <string name="btn_obj_download">Download Obj</string>
+    <string name="linkObj">http://192.168.178.53:22222/Glasses/glasses.obj</string>
+    <string name="linkMtl">http://192.168.178.53:22222/Glasses/glasses_m.mtl</string>
+    <string name="linkPng">http://192.168.178.53:22222/Glasses/glasses_p.png</string>
+</resources>
