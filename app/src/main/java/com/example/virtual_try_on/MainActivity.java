@@ -75,14 +75,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startdownload() {
-        // file URL
+        /*
+        RDJ file URL
+        Glasses file URL
+         */
         String urlObj = getResources().getString(R.string.linkObj);
         String urlMtl = getResources().getString(R.string.linkMtl);
         String urlPng = getResources().getString(R.string.linkPng);
+
+        String urlglassesObj = getResources().getString(R.string.linkglassesObj);
+        String urlglassesMtl = getResources().getString(R.string.linkglassesMtl);
+        String urlglassesPng = getResources().getString(R.string.linkglassesPng);
         // make download request of file
-        DownloadManager.Request requestObj = new DownloadManager.Request(Uri.parse(urlObj));
-        DownloadManager.Request requestMtl = new DownloadManager.Request(Uri.parse(urlMtl));
-        DownloadManager.Request requestPng = new DownloadManager.Request(Uri.parse(urlPng));
+        DownloadManager.Request requestObj = new DownloadManager.Request(Uri.parse(urlglassesObj));
+        DownloadManager.Request requestMtl = new DownloadManager.Request(Uri.parse(urlglassesMtl));
+        DownloadManager.Request requestPng = new DownloadManager.Request(Uri.parse(urlglassesPng));
         // set Network type
         requestObj.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_MOBILE | DownloadManager.Request.NETWORK_WIFI);
         requestMtl.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_MOBILE | DownloadManager.Request.NETWORK_WIFI);
@@ -95,9 +102,10 @@ public class MainActivity extends AppCompatActivity {
         requestObj.allowScanningByMediaScanner();
         requestObj.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_ONLY_COMPLETION);
         // set file save path
-        requestObj.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,"Glasses/glasses.obj");
-        requestMtl.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,"Glasses/glasses_m.mtl");
-        requestPng.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,"Glasses/glasses_p.png");
+//        requestObj.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,"Rdj/RDJ.obj");
+        requestObj.setDestinationInExternalFilesDir(getApplicationContext(),Environment.DIRECTORY_DOWNLOADS,"Glasses/glasses.obj");
+        requestMtl.setDestinationInExternalFilesDir(getApplicationContext(),Environment.DIRECTORY_DOWNLOADS,"Glasses/glasses_m.mtl");
+        requestPng.setDestinationInExternalFilesDir(getApplicationContext(),Environment.DIRECTORY_DOWNLOADS,"Glasses/glasses_p.png");
         // download file service
         DownloadManager manager = (DownloadManager)getSystemService(Context.DOWNLOAD_SERVICE);
         // start download queue
