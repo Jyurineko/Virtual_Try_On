@@ -12,10 +12,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.Toast;
@@ -42,6 +44,8 @@ public class ModelActivity extends AppCompatActivity {
     private SceneLoader scene;
 
     private Handler handler;
+
+    static final int REQUEST_IMAGE_CAPTURE = 1;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -73,10 +77,13 @@ public class ModelActivity extends AppCompatActivity {
             addContentView(gLView,layoutParams);
 
             //TODO: add "return to MainPage"
+            //create return mainpage button
+            Button btn_return_mainpage = new Button(this);
+            //params of btn
             FrameLayout.LayoutParams layoutParams_btn_return_mainpage = new FrameLayout.LayoutParams(400,200);
             //bottom setting
-            layoutParams_btn_return_mainpage.gravity = Gravity.CENTER_HORIZONTAL | Gravity.CENTER;
-            Button btn_return_mainpage = new Button(this);
+//            layoutParams_btn_return_mainpage.gravity = Gravity.CENTER | Gravity.LEFT;
+            layoutParams_btn_return_mainpage.setMargins(100,750,0,0);
             //onclick function(test return to main activity
             btn_return_mainpage.setOnClickListener(v -> {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -87,10 +94,29 @@ public class ModelActivity extends AppCompatActivity {
             btn_return_mainpage.setGravity(Gravity.RIGHT);
             btn_return_mainpage.setGravity(Gravity.CENTER);
             btn_return_mainpage.setText("Return to MainPage");
-            //add widget
+            //add btn widget
             addContentView(btn_return_mainpage,layoutParams_btn_return_mainpage);
 
             //TODO: add "take picture"
+            //create new button
+            Button btn_take_photo = new Button(this);
+            //params of btn
+            FrameLayout.LayoutParams layoutParams_btn_take_photo = new FrameLayout.LayoutParams(400,200);
+            //bottom setting
+            layoutParams_btn_take_photo.setMargins(600,750,0,0);
+            //TODO: TAKE PICTURE FUNCTION
+            btn_take_photo.setOnClickListener(v-> {
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if(takePictureIntent.resolveActivity(getPackageManager()) != null){
+                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+                }
+            });
+            //text setting
+            btn_take_photo.setGravity(Gravity.RIGHT);
+            btn_take_photo.setGravity(Gravity.CENTER);
+            btn_take_photo.setText("Take front selfie");
+            //add btn widget
+            addContentView(btn_take_photo,layoutParams_btn_take_photo);
 
             //Don't enable this, it will replace the ContentView by Model Layout file!!!!!!!!!!!!
             //setContentView(R.layout.activity_model);
