@@ -1,11 +1,15 @@
 <resources>
     <string name="app_name">Virtual_Try_On</string>
-    <string name="button_obj_shower">Show Obj</string>
-    <string name="btn_obj_download">Download Obj</string>
-    <string name="linkObj">http://192.168.178.53:22222/Rdj/rdj.obj</string>
-    <string name="linkMtl">http://192.168.178.53:22222/Rdj/rdj_m.mtl</string>
-    <string name="linkPng">http://192.168.178.53:22222/Rdj/rdj_p.png</string>
-    <string name="linkglassesObj">http://192.168.178.53:22222/Glasses/glasses.obj</string>
-    <string name="linkglassesMtl">http://192.168.178.53:22222/Glasses/glasses_m.mtl</string>
-    <string name="linkglassesPng">http://192.168.178.53:22222/Glasses/glasses_p.png</string>
+    <string name="button_obj_shower">To fitting room</string>
+
+    <string name="serverIpAddressWithPort">http://jyurineko.ddns.net:2222</string>
+
+    <string name="requestSelfieObj">http://jyurineko.ddns.net:2222/FileShare/ForClient/selfie.obj</string>
+    <string name="requestSelfieMtl">http://jyurineko.ddns.net:2222/FileShare/ForClient/selfie_m.mtl</string>
+    <string name="requestSelfiePng">http://jyurineko.ddns.net:2222/FileShare/ForClient/selfie_p.png</string>
+    <string name="checkFileExists">check</string>
+    <string name="turn2PhotoPage">start to selfie</string>
+
+    <string name="takephoto">Take Photo</string>
+    <string name="photoUpload">Upload Photo</string>
 </resources>
