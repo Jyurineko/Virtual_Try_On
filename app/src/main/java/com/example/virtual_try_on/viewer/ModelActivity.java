@@ -47,19 +47,24 @@ public class ModelActivity extends AppCompatActivity {
     private Handler handler;
 
 
-    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_model);
 
         //-------------------------------test-----------------------------------------
-        ContentUtils.provideAssets(this);
-//        Uri uri = Uri.parse("assets://assets/models/glasses.obj");
-        File fileObj = getApplicationContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS);
-        String filepath = "file://" + fileObj.getPath() + File.separator + "selfie.obj";
-        Uri uri = Uri.parse(filepath);
-        this.paramUri = uri;
+//        ContentUtils.provideAssets(this);
+//        Uri uri = Uri.parse("assets://assets/models/selfie.obj");
+        String fileObj = getApplicationContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) + File.separator + "selfie.obj";
+        String fileMtl = getApplicationContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) + File.separator + "selfie_m.mtl";
+        String filePng = getApplicationContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) + File.separator + "selfie_p.png";
+        File obj = new File(fileObj);
+        File mtl = new File(fileMtl);
+        File png = new File(filePng);
+        this.paramUri = Uri.fromFile(obj);
+        ContentUtils.addUri("selfie_m.mtl",Uri.fromFile(mtl));
+        ContentUtils.addUri("selfie_p.png",Uri.fromFile(png));
+//        this.paramUri = uri;
         //----------------------------------------------------------------------------
 
         handler = new Handler(getMainLooper());

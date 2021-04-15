@@ -51,7 +51,6 @@ public class PhotoActivity extends AppCompatActivity {
     private static final String FAILURE_CODE = "file download failure code";
     private static final MediaType MEDIA_TYPE_JPEG = MediaType.parse("image/jpeg");
     private static final String UPLOAD_URL = "http://jyurineko.ddns.net:2222/FileShare/Upload";
-    private static final String CHECK_RELATED_FILE_URL = "http://jyurineko.ddns.net:2222/FileShare/ForClient/selfie.obj";
 
     private File imageFile = null;
 
@@ -64,19 +63,15 @@ public class PhotoActivity extends AppCompatActivity {
 
 //    check files exists module
     public void checkFileExists(View view){
-        String fileUri = getResources().getString(R.string.requestSelfieObj);
+        /*String fileUri = getResources().getString(R.string.requestSelfieObj);
 
         CheckTask task = new CheckTask();
-        task.execute(fileUri);
+        task.execute(fileUri);*/
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-            if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)== PackageManager.PERMISSION_DENIED){
-                String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
-                requestPermissions(permissions,PERMISSION_STORAGE_CODE);
-            }else{
-                startDownload();
-            }
-        }else {
+        if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)== PackageManager.PERMISSION_DENIED){
+            String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
+            requestPermissions(permissions,PERMISSION_STORAGE_CODE);
+        }else{
             startDownload();
         }
     }
@@ -132,7 +127,7 @@ public class PhotoActivity extends AppCompatActivity {
         String objUrl = "http://jyurineko.ddns.net:2222/FileShare/ForClient/selfie.obj";
         String mtlUrl = "http://jyurineko.ddns.net:2222/FileShare/ForClient/selfie_m.mtl";
         String pngUrl = "http://jyurineko.ddns.net:2222/FileShare/ForClient/selfie_p.png";
-        String savepath = getApplicationContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) + File.separator;
+        String savepath = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).getPath();
         Request requestObj = new Request.Builder().url(objUrl).build();
         Request requestMtl = new Request.Builder().url(mtlUrl).build();
         Request requestPng = new Request.Builder().url(pngUrl).build();
