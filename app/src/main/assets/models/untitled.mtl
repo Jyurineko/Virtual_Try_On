@@ -1,0 +1,24 @@
+# Blender MTL File: 'None'
+# Material Count: 2
+
+newmtl 1A1A1A
+Ns 96.078443
+Ka 1.000000 1.000000 1.000000
+Kd 0.101961 0.101961 0.101961
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.000000
+illum 6
+
+newmtl glasses_m
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.780392 0.568627 0.113725
+Ks 0.913725 0.913725 0.913725
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd F:\\FileShare\\Glasses\\glasses_p.png
+map_Ks F:\\FileShare\\Glasses\\glasses_p.png

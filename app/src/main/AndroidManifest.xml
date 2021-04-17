@@ -35,6 +35,7 @@
 
         <activity android:name=".PhotoActivity" />
         <activity android:name=".viewer.ModelActivity" />
+        <activity android:name=".ImageListActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

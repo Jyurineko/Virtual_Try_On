@@ -55,7 +55,7 @@ public class ModelActivity extends AppCompatActivity {
         //-------------------------------test-----------------------------------------
 //        ContentUtils.provideAssets(this);
 //        Uri uri = Uri.parse("assets://assets/models/selfie.obj");
-        String fileObj = getApplicationContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) + File.separator + "selfie.obj";
+        /*String fileObj = getApplicationContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) + File.separator + "selfie.obj";
         String fileMtl = getApplicationContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) + File.separator + "selfie_m.mtl";
         String filePng = getApplicationContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) + File.separator + "selfie_p.png";
         File obj = new File(fileObj);
@@ -63,9 +63,14 @@ public class ModelActivity extends AppCompatActivity {
         File png = new File(filePng);
         this.paramUri = Uri.fromFile(obj);
         ContentUtils.addUri("selfie_m.mtl",Uri.fromFile(mtl));
-        ContentUtils.addUri("selfie_p.png",Uri.fromFile(png));
+        ContentUtils.addUri("selfie_p.png",Uri.fromFile(png));*/
 //        this.paramUri = uri;
         //----------------------------------------------------------------------------
+
+        Bundle b = getIntent().getExtras();
+        if (b.getString("uri") != null){
+            this.paramUri = Uri.parse(b.getString("uri"));
+        }
 
         handler = new Handler(getMainLooper());
 

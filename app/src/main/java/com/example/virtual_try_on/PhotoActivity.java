@@ -61,6 +61,11 @@ public class PhotoActivity extends AppCompatActivity {
 
     }
 
+    public void imageList(View view){
+        Intent intent = new Intent(getApplicationContext(), ImageListActivity.class);
+        startActivity(intent);
+    }
+
 //    check files exists module
     public void checkFileExists(View view){
         /*String fileUri = getResources().getString(R.string.requestSelfieObj);
