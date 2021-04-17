@@ -156,8 +156,10 @@ public class SceneLoader implements LoaderTask.Callback {
             new GltfLoaderTask(parent, uri, this).execute();
         }
         */
-        Uri uri = modelActivity.getParamUri();
-        new WavefrontLoaderTask(modelActivity,uri,this).execute();
+        Uri uri1 = modelActivity.getParamUri1();
+        Uri uri2 = modelActivity.getParamUri2();
+        new WavefrontLoaderTask(modelActivity,uri1,this).execute();
+        new WavefrontLoaderTask(modelActivity,uri2,this).execute();
     }
 
     public boolean isDrawAxis(){

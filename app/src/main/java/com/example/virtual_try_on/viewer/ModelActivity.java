@@ -38,7 +38,8 @@ public class ModelActivity extends AppCompatActivity {
     /**
      * The file to load. Passed as input parameter
      */
-    private Uri paramUri;
+    private Uri paramUri1;
+    private Uri paramUri2;
 
     private ModelSurfaceView gLView;
 
@@ -55,22 +56,30 @@ public class ModelActivity extends AppCompatActivity {
         //-------------------------------test-----------------------------------------
 //        ContentUtils.provideAssets(this);
 //        Uri uri = Uri.parse("assets://assets/models/selfie.obj");
-        /*String fileObj = getApplicationContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) + File.separator + "selfie.obj";
+        String fileObj = getApplicationContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) + File.separator + "selfie.obj";
         String fileMtl = getApplicationContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) + File.separator + "selfie_m.mtl";
         String filePng = getApplicationContext().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) + File.separator + "selfie_p.png";
         File obj = new File(fileObj);
         File mtl = new File(fileMtl);
         File png = new File(filePng);
-        this.paramUri = Uri.fromFile(obj);
+        this.paramUri1 = Uri.fromFile(obj);
         ContentUtils.addUri("selfie_m.mtl",Uri.fromFile(mtl));
-        ContentUtils.addUri("selfie_p.png",Uri.fromFile(png));*/
-//        this.paramUri = uri;
+        ContentUtils.addUri("selfie_p.png",Uri.fromFile(png));
         //----------------------------------------------------------------------------
 
         Bundle b = getIntent().getExtras();
         if (b.getString("uri") != null){
-            this.paramUri = Uri.parse(b.getString("uri"));
+            this.paramUri2 = Uri.parse(b.getString("uri"));
         }
+
+/*        ContentUtils.provideAssets(this);
+        Uri uri1 = Uri.parse("assets://assets/models/Glasses.obj");
+        Uri uri2 = Uri.parse("assets://assets/models/Glasses2.obj");
+
+        this.paramUri1 = uri1;
+        this.paramUri2 = uri2;*/
+
+//        -----------------------------------------------------------------------------
 
         handler = new Handler(getMainLooper());
 
@@ -122,9 +131,10 @@ public class ModelActivity extends AppCompatActivity {
         super.onWindowFocusChanged(hasFocus);
     }
 
-    public Uri getParamUri() {
-        return paramUri;
+    public Uri getParamUri1() {
+        return paramUri1;
     }
+    public Uri getParamUri2() { return paramUri2; }
 
     public SceneLoader getScene() {
         return scene;

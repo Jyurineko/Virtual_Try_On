@@ -110,14 +110,6 @@ public class ImageListActivity extends AppCompatActivity {
                     ContentUtils.provideAssets(this);
                     launchModelRendererActivity(Uri.parse("assets://assets" + File.separator + "models" + File.separator + "untitled.obj"));
                     break;
-                case("test merge"):
-                    try {
-                        MergeModel.mergeObj(tempObjPath, obj1Path, finalObj);
-                        MergeModel.mergeMtl(tempMtlPath, mtl1Path, finalMtl);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    break;
                 default:
                     break;
             }

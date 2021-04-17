@@ -232,16 +232,7 @@ public class ModelRenderer implements GLSurfaceView.Renderer {
                 }
 
                 boolean changed = objData.isChanged();
-
-//				if (objData instanceof AnimatedModel
-//						&& ((AnimatedModel) objData).getGltfAnimation() != null){
-//					//TODO: read each animation model data and change vertex inside objData
-//					// based on channel data and do transformation
-//					AnimationModel animation = ((AnimatedModel) objData).getGltfAnimation();
-//					for (AnimationModel.Channel channelModel: animation.getChannels()){
-//						String path = Channel
-//					}
-//				}
+                
 
                 //TODO: refactor code for loading more textures, consider delete textures map and add texture class
                 Integer textureId = textures.get(objData.getTextureData());
