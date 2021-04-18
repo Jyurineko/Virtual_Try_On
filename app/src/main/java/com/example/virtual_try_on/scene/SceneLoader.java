@@ -132,30 +132,10 @@ public class SceneLoader implements LoaderTask.Callback {
         // Camera to show a point of view
         camera = new Camera();
         camera.setChanged(true); // force first draw
-/*
-        if (modelActivity.getParamUri() == null){
-            return;
-        }
- */
 
         startTime = SystemClock.uptimeMillis();
 
-        /*
-        Uri uri = parent.getParamUri();
-        Log.i("Object3DBuilder", "Loading model " + uri + ". async and parallel..");
-        if (uri.toString().toLowerCase().endsWith(".obj") || parent.getParamType() == 0) {
-            new WavefrontLoaderTask(parent, uri, this).execute();
-        } else if (uri.toString().toLowerCase().endsWith(".stl") || parent.getParamType() == 1) {
-            Log.i("Object3DBuilder", "Loading STL object from: "+uri);
-            new STLLoaderTask(parent, uri, this).execute();
-        } else if (uri.toString().toLowerCase().endsWith(".dae") || parent.getParamType() == 2) {
-            Log.i("Object3DBuilder", "Loading Collada object from: "+uri);
-            new ColladaLoaderTask(parent, uri, this).execute();
-        } else if (uri.toString().toLowerCase().endsWith(".gltf") || parent.getParamType() == 3) {
-            Log.i("Object3DBuilder", "Loading GLtf object from: "+uri);
-            new GltfLoaderTask(parent, uri, this).execute();
-        }
-        */
+
         Uri uri1 = modelActivity.getParamUri1();
         Uri uri2 = modelActivity.getParamUri2();
         new WavefrontLoaderTask(modelActivity,uri1,this).execute();

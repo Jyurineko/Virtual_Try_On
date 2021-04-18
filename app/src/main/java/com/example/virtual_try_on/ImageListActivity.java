@@ -40,15 +40,13 @@ public class ImageListActivity extends AppCompatActivity {
     private final String[] jewelryNames = {
             "glasses 1",
             "glasses 2",
-            "glasses 3",
-            "test merge"
+            "glasses 3"
     };
 
     private final Integer[] imageId = {
             R.drawable.glasses1,
             R.drawable.glasses2,
-            R.drawable.glasses3,
-            R.drawable.glasses1
+            R.drawable.glasses3
     };
 
 
@@ -58,31 +56,7 @@ public class ImageListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_list);
 
-        //-------------------------------------------------
-        String obj1Path = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) + File.separator + "selfie.obj";
-        String mtl1Path = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS) + File.separator + "selfie_m.mtl";
-//        String obj2Path = "assets:////assets/models/Glasses.obj";
-//        String mtl2Path = "assets:////assets/models/Glasses.mtl";
-        InputStream obj2 = null;
-        InputStream mtl2 = null;
-        try {
-            obj2 = getResources().getAssets().open("models/Glasses.obj");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
-        try {
-            mtl2 = getResources().getAssets().open("models/Glasses.mtl");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        InputStream finalObj = obj2;
-        InputStream finalMtl = mtl2;
-
-        String tempObjPath = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).getPath();
-        String tempMtlPath = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).getPath();
-        //-------------------------------------------------
 
         TextView textView = new TextView(this);
         textView.setTypeface(Typeface.DEFAULT_BOLD);
@@ -108,7 +82,7 @@ public class ImageListActivity extends AppCompatActivity {
                     break;
                 case("glasses 3"):
                     ContentUtils.provideAssets(this);
-                    launchModelRendererActivity(Uri.parse("assets://assets" + File.separator + "models" + File.separator + "untitled.obj"));
+                    launchModelRendererActivity(Uri.parse("assets://assets" + File.separator + "models" + File.separator + "Glasses3.obj"));
                     break;
                 default:
                     break;
