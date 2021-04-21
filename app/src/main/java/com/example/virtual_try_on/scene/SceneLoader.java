@@ -5,6 +5,7 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.virtual_try_on.GlassesLoaderTask;
 import com.example.virtual_try_on.viewer.ModelActivity;
 import com.example.virtual_try_on.viewer.ModelRenderer;
 
@@ -139,7 +140,8 @@ public class SceneLoader implements LoaderTask.Callback {
         Uri uri1 = modelActivity.getParamUri1();
         Uri uri2 = modelActivity.getParamUri2();
         new WavefrontLoaderTask(modelActivity,uri1,this).execute();
-        new WavefrontLoaderTask(modelActivity,uri2,this).execute();
+//        new WavefrontLoaderTask(modelActivity,uri2,this).execute();
+        new GlassesLoaderTask(modelActivity, uri2, this).execute();
     }
 
     public boolean isDrawAxis(){

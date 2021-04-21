@@ -22,6 +22,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import com.example.virtual_try_on.ImageListActivity;
 import com.example.virtual_try_on.MainActivity;
 import com.example.virtual_try_on.PhotoActivity;
 import com.example.virtual_try_on.R;
@@ -48,6 +49,7 @@ public class ModelActivity extends AppCompatActivity {
     private Handler handler;
 
 
+    @SuppressLint({"RtlHardcoded", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -115,6 +117,20 @@ public class ModelActivity extends AppCompatActivity {
             btn_return_mainpage.setText("Return to take new Photo");
             //add btn widget
             addContentView(btn_return_mainpage,layoutParams_btn_return_mainpage);
+
+            //TODO: add "return to choose new glasses"
+            Button btn_return_choose = new Button(this);
+            FrameLayout.LayoutParams layoutParams_btn_return_choose = new FrameLayout.LayoutParams(400, 200);
+            layoutParams_btn_return_choose.gravity = Gravity.CENTER | Gravity.RIGHT;
+            btn_return_choose.setOnClickListener(v -> {
+                Intent intent = new Intent(getApplicationContext(), ImageListActivity.class);
+                startActivity(intent);
+                finish();
+            });
+            btn_return_choose.setGravity(Gravity.CENTER);
+            btn_return_choose.setText("Return to choose new Glasses");
+            addContentView(btn_return_choose,layoutParams_btn_return_choose);
+
 
             //Don't enable this, it will replace the ContentView by Model Layout file!!!!!!!!!!!!
             //setContentView(R.layout.activity_model);

@@ -33,10 +33,14 @@
                 android:resource="@xml/file_path" />
         </provider>
 
-        <activity android:name=".PhotoActivity" />
-        <activity android:name=".viewer.ModelActivity" />
-        <activity android:name=".ImageListActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".PhotoActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".viewer.ModelActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ImageListActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

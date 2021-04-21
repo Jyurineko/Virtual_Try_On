@@ -10,8 +10,8 @@ android {
         applicationId "com.example.virtual_try_on"
         minSdkVersion 26
         targetSdkVersion 30
-        versionCode 3
-        versionName "2.0"
+        versionCode 4
+        versionName "2.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
