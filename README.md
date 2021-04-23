@@ -1,8 +1,5 @@
-# Virtual Dress-On
-
-Bachelor project for a virtual dress on application. Machine learning techniques will be used to find and reconstruct human body parts in an image/video stream and these will be augmented with cloths.
-
-## Virtual Dress-On Application
+# mobile Virtual Dress-On Application
+***
 ## Installation Steps
 ### Installation of Server
 1. Remember Installation must in root enviroment.
