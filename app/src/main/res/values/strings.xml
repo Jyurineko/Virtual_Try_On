@@ -7,10 +7,10 @@
     <string name="requestSelfieObj">http://jyurineko.ddns.net:2222/FileShare/ForClient/selfie.obj</string>
     <string name="requestSelfieMtl">http://jyurineko.ddns.net:2222/FileShare/ForClient/selfie_m.mtl</string>
     <string name="requestSelfiePng">http://jyurineko.ddns.net:2222/FileShare/ForClient/selfie_p.png</string>
-    <string name="checkFileExists">check</string>
-    <string name="turn2PhotoPage">start to selfie</string>
+    <string name="checkFileExists">check progress</string>
+    <string name="turn2PhotoPage">start to Use</string>
 
     <string name="takephoto">Take Photo</string>
     <string name="photoUpload">Upload Photo</string>
-    <string name="glassesList">Glasses List</string>
+    <string name="glassesList">Accessory List</string>
 </resources>

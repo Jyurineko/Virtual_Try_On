@@ -40,13 +40,15 @@ public class ImageListActivity extends AppCompatActivity {
     private final String[] jewelryNames = {
             "glasses 1",
             "glasses 2",
-            "glasses 3"
+            "glasses 3",
+            "hat 1"
     };
 
     private final Integer[] imageId = {
             R.drawable.glasses1,
             R.drawable.glasses2,
-            R.drawable.glasses3
+            R.drawable.glasses3,
+            R.drawable.hat1
     };
 
 
@@ -74,15 +76,19 @@ public class ImageListActivity extends AppCompatActivity {
             switch (jewelryNames[position-1]){
                 case("glasses 1"):
                     ContentUtils.provideAssets(this);
-                    launchModelRendererActivity(Uri.parse("assets://assets" + File.separator + "models" + File.separator + "Glasses.obj"));
+                    launchModelRendererActivity(Uri.parse("assets://assets" + File.separator + "models" + File.separator + "Glasses.obj"), Uri.parse("glasses"));
                     break;
                 case("glasses 2"):
                     ContentUtils.provideAssets(this);
-                    launchModelRendererActivity(Uri.parse("assets://assets" + File.separator + "models" + File.separator + "Glasses2.obj"));
+                    launchModelRendererActivity(Uri.parse("assets://assets" + File.separator + "models" + File.separator + "Glasses2.obj"),Uri.parse("glasses"));
                     break;
                 case("glasses 3"):
                     ContentUtils.provideAssets(this);
-                    launchModelRendererActivity(Uri.parse("assets://assets" + File.separator + "models" + File.separator + "Glasses3.obj"));
+                    launchModelRendererActivity(Uri.parse("assets://assets" + File.separator + "models" + File.separator + "Glasses3.obj"),Uri.parse("glasses"));
+                    break;
+                case("hat 1"):
+                    ContentUtils.provideAssets(this);
+                    launchModelRendererActivity(Uri.parse("assets://assets" + File.separator + "models" + File.separator + "hat1.obj"),Uri.parse("hat"));
                     break;
                 default:
                     break;
@@ -91,10 +97,11 @@ public class ImageListActivity extends AppCompatActivity {
     }
 
 
-    private void launchModelRendererActivity(Uri uri) {
+    private void launchModelRendererActivity(Uri uri, Uri accessoryType) {
         Log.i("Menu", "Launching renderer for '" + uri + "'");
         Intent intent = new Intent(getApplicationContext(), ModelActivity.class);
         intent.putExtra("uri", uri.toString());
+        intent.putExtra("accessoryType", accessoryType.toString());
 
         // content provider case
         if (!loadModelParameters.isEmpty()) {

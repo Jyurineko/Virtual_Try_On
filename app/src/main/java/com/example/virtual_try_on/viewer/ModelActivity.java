@@ -41,6 +41,7 @@ public class ModelActivity extends AppCompatActivity {
      */
     private Uri paramUri1;
     private Uri paramUri2;
+    private Uri paramType;
 
     private ModelSurfaceView gLView;
 
@@ -70,8 +71,9 @@ public class ModelActivity extends AppCompatActivity {
         //----------------------------------------------------------------------------
 
         Bundle b = getIntent().getExtras();
-        if (b.getString("uri") != null){
+        if (b.getString("uri") != null && b.getString("accessoryType") != null){
             this.paramUri2 = Uri.parse(b.getString("uri"));
+            this.paramType = Uri.parse(b.getString("accessoryType"));
         }
 
 /*        ContentUtils.provideAssets(this);
@@ -151,6 +153,7 @@ public class ModelActivity extends AppCompatActivity {
         return paramUri1;
     }
     public Uri getParamUri2() { return paramUri2; }
+    public Uri getParamType() { return paramType; }
 
     public SceneLoader getScene() {
         return scene;

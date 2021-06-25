@@ -68,8 +68,8 @@ public class GlassesLoaderTask extends LoaderTask {
             // scale object
             publishProgress(3);
             data.centerScale();
-            data.setTranslation(new float[]{0, (float) 0.18, (float) 0.1});
-            data.setScale(new float[]{(float) 2.3, (float) 2.4, (float) 3.4});
+            data.setTranslation(new float[]{0, (float) 0.19, (float) 0.08});
+            data.setScale(new float[]{(float) 2.0, (float) 1.9, (float) 3.4});
 
             // draw triangles instead of points
             data.setDrawMode(GLES20.GL_TRIANGLES);
