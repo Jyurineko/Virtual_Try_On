@@ -4,7 +4,7 @@
 ### Installation of Server
 1. Remember Installation must in root enviroment.
 2. Copy `upload_watchdog.py` on your desktop.
-3. Flow the [TF-FLAME](https://github.com/TimoBolkart/TF_FLAME/tree/dependabot/pip/tensorflow-gpu-2.3.1](https://github.com/TimoBolkart/TF_FLAME "TF-FLAME") installation.
+3. Flow the [TF-FLAME](https://github.com/TimoBolkart/TF_FLAME "TF-FLAME") installation.
 4. Flow the [face-alignment](https://github.com/1adrianb/face-alignment](https://github.com/1adrianb/face-alignment "face-alignment") installation.
 5. Copy `gen_lmks_npy_4_Flame.py` into face-alignment/examples folder. I have already modified for FLAME. get rid of 0-17(face landmarks) landmarks which won't FLAME use. or you can modify `detect_landmarks_in_image.py` on your own porpose.
 6. Because FLAME default use python3.6 to compile the project. when obj file is generated, `usemtl 'mtlname'` will not auto generated. if you directly install python3.6 in your system instead of using virtual enviroment. you can change codes in `/usr/local/lib/python3.6/site-packages/psbody/mesh/serialization/serialization.py`. 
